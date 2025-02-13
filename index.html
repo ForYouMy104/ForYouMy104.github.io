@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        --button-width: 8rem;
+        --button-height: 4.5rem;
+        --image-size: min(90vw, 325px);
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #9fe7f5;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        font-size: 16px;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .content-column {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2vh;
+        padding: 0 5%;
+        box-sizing: border-box;
+      }
+
+      .valentine-image {
+        width: var(--image-size);
+        height: auto;
+        margin-bottom: 2vh;
+      }
+
+      .question-text {
+        font-family: Arial, sans-serif;
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        color: #333;
+        text-align: center;
+        margin-bottom: 2vh;
+        line-height: 1.3;
+        padding: 0 5%;
+      }
+
+      .buttons-container {
+        position: relative;
+        width: 50%;
+        height: 50vh;
+      }
+
+      .button {
+        position: absolute;
+        min-width: var(--button-width);
+        height: var(--button-height);
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        font-family: Arial, sans-serif;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        padding: 1rem;
+      }
+
+      #yesButton {
+        background-color: #0664d7;
+        color: white;
+        left: 40%;
+        top: 50%;
+        margin-right: 50px;
+      }
+
+      #noButton {
+        background-color: #21277b;
+        color: white;
+        left: 40%;
+        top: 50%;
+        margin-left: 50px;
+      }
+
+      @media (max-width: 768px) {
+        :root {
+          --button-width: 7rem;
+          --button-height: 4rem;
+        }
+
+        .content-column {
+          margin-top: 5vh;
+        }
+
+        .question-text {
+          font-size: clamp(1.2rem, 6vw, 1.5rem);
+          margin-bottom: 3vh;
+        }
+
+        .buttons-container {
+          height: 40vh;
+        }
+
+        .button {
+          min-width: 45%;
+          width: auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #yesButton {
+          left: 30%;
+        }
+
+        #noButton {
+          left: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content-column">
+        <img
+          src="gato_romantico-removebg.png"
+          class="valentine-image"
+          alt="Romantic cat"
+        />
+        <div class="question-text">Do you wanna be my NO VALENTINE??</div>
+      </div>
+
+      <div class="buttons-container">
+        <button id="yesButton" class="button">YES!</button>
+        <button id="noButton" class="button">NO</button>
+      </div>
+    </div>
+
+    <script>
+      const noButton = document.getElementById("noButton");
+      const buttonsContainer = document.querySelector(".buttons-container");
+      let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      function moveButton() {
+        const maxX = buttonsContainer.clientWidth - noButton.offsetWidth;
+        const maxY = buttonsContainer.clientHeight - noButton.offsetHeight;
+
+        const newX = Math.random() * maxX;
+        const newY = Math.random() * maxY;
+
+        noButton.style.left = `${newX}px`;
+        noButton.style.top = `${newY}px`;
+      }
+
+      // Mover solo con click en móvil
+      if (isMobile) {
+        noButton.addEventListener("click", moveButton);
+      } else {
+        noButton.addEventListener("mouseover", moveButton);
+      }
+    </script>
+    <!-- Opcional: Sweet Alert para confirmación bonita -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      // Versión alternativa con confirmación
+      yesButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        Swal.fire({
+          title: "¡I knew you would say yes! 💖",
+          text: "(No es que tuvieras otra opcion)",
+          icon: "success",
+          confirmButtonText: "Continuar",
+          background: "#9AD9EA",
+          color: "#67001E",
+          confirmButtonColor: "#0664d7",
+          showLoaderOnConfirm: true,
+          preConfirm: () => {
+            window.location.href = "dedicatoria-bonita.html";
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

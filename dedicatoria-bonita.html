@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        overflow-x: hidden;
+        background-color: #9fe7f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Arial", sans-serif;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .message-container {
+        max-width: 800px;
+        background-color: rgba(255, 255, 255, 0.54);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        animation: fadeIn 1s ease-in;
+      }
+
+      .romantic-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #5a2e35;
+        text-align: justify;
+        margin-bottom: 30px;
+      }
+
+      .surprise-button {
+        background-color: #0a70ff;
+        color: white;
+        border: none;
+        padding: 15px 40px;
+        border-radius: 30px;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 4px 10px rgba(255, 10, 84, 0.3);
+      }
+
+      .surprise-button:hover {
+        transform: scale(1.05);
+        background-color: #1afff7;
+        box-shadow: 0 6px 15px rgba(255, 10, 84, 0.5);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .message-container {
+          padding: 20px;
+          margin: 15px;
+        }
+
+        .romantic-text {
+          font-size: 1rem;
+          text-align: left;
+        }
+
+        .surprise-button {
+          font-size: 1.2rem;
+          padding: 12px 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message-container">
+      <div class="romantic-text">
+        <p><strong>Feliz No San Valentín.</strong></p>
+
+        <p>
+          Te hago esta página para que la puedas leer cualquier
+          <strong>día</strong> y no solamente un 14 de febrero. (Aunque si fuera
+          a celebrar algo en este mes, sería <strong>el 12 o el 19</strong>).
+          <br /><br />
+          Pero realmente quiero que recuerdes que no te <strong>Amo</strong> un
+          día al año, sino que te <strong>Amo</strong> del año
+          <strong>los 365 días</strong>.
+        </p>
+
+        <p><strong>¡Por otro año más juntos!</strong> ❤️</p>
+        <br /><br />
+      </div>
+
+      <button
+        class="surprise-button"
+        onclick="window.location.href='flores.html'"
+      >
+        ¡Púlsame! 💝
+      </button>
+    </div>
+  </body>
+</html>
