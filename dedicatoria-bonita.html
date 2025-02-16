@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         margin: 0;
         overflow-x: hidden;
-        background-color: #9fe7f5;
+        background: linear-gradient(135deg, #9fe7f5, #ff9a9e);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -35,6 +36,24 @@
         margin-bottom: 30px;
       }
 
+      .romantic-text p {
+        opacity: 0;
+        animation: fadeInText 1s ease-in forwards;
+      }
+
+      .romantic-text p:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      .romantic-text p:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .romantic-text p:nth-child(3) {
+        animation-delay: 1.5s;
+      }
+      .romantic-text p:nth-child(4) {
+        animation-delay: 2s;
+      }
+
       .surprise-button {
         background-color: #0a70ff;
         color: white;
@@ -47,6 +66,7 @@
         display: block;
         margin: 0 auto;
         box-shadow: 0 4px 10px rgba(255, 10, 84, 0.3);
+        animation: heartbeat 1.5s infinite;
       }
 
       .surprise-button:hover {
@@ -63,6 +83,29 @@
         to {
           opacity: 1;
           transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInText {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
         }
       }
 
@@ -88,27 +131,52 @@
     <div class="message-container">
       <div class="romantic-text">
         <p><strong>Feliz No San Valentín.</strong></p>
-
         <p>
-          Te hago esta página para que la puedas leer cualquier
-          <strong>día</strong> y no solamente un 14 de febrero. (Aunque si fuera
-          a celebrar algo en este mes, sería <strong>el 12 o el 19</strong>).
-          <br /><br />
-          Pero realmente quiero que recuerdes que no te <strong>Amo</strong> un
-          día al año, sino que te <strong>Amo</strong> del año
-          <strong>los 365 días</strong>.
+          Te hago esta página para que la puedas leer cualquier día y no
+          solamente un 14 de febrero. (Aunque si fuera a celebrar algo en este
+          mes, sería el <strong>12 o el 19</strong>).
         </p>
-
-        <p><strong>¡Por otro año más juntos!</strong> ❤️</p>
-        <br /><br />
+        <p>
+          Pero realmente quiero que recuerdes que no te Amo un día al año, sino
+          que <strong>Te Amo del año los 365 días</strong>.
+        </p>
+        <p>
+          Quiero demostrarte que en todo lo que hago te tengo presente, y que de
+          una manera y otra:
+        </p>
+        <p>
+          <strong>Te quiero tener siempre en mi vida.</strong>
+        </p>
       </div>
 
-      <button
-        class="surprise-button"
-        onclick="window.location.href='flores.html'"
-      >
-        ¡Púlsame! 💝
-      </button>
+      <button class="surprise-button">¡Púlsame! 💙</button>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+      document
+        .querySelector(".surprise-button")
+        .addEventListener("click", () => {
+          confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+          });
+          Swal.fire({
+            title: "No se si lo sabias pero...",
+            text: "Te amo mucho.",
+            icon: "success",
+            confirmButtonText: "¡Yo también te amo!",
+            background: "#9AD9EA",
+            color: "#67001E",
+            confirmButtonColor: "#0664d7",
+            showLoaderOnConfirm: true,
+            preConfirm: () => {
+              window.location.href = "dedicatoria-bonita2.html";
+            },
+          });
+        });
+    </script>
   </body>
 </html>
