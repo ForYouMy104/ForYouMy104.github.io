@@ -62,6 +62,15 @@
       .romantic-text p:nth-child(4) {
         animation-delay: 2s;
       }
+      .romantic-text p:nth-child(5) {
+        animation-delay: 2.5s;
+      }
+      .romantic-text p:nth-child(6) {
+        animation-delay: 3s;
+      }
+      .romantic-text p:nth-child(7) {
+        animation-delay: 3.5s;
+      }
 
       .surprise-button {
         background-color: #0664d7; /* Azul más oscuro */
@@ -139,23 +148,30 @@
   <body>
     <div class="message-container">
       <div class="romantic-text">
-        <!-- Aquí puedes poner tu propio texto -->
-        <p><strong>Un mensaje especial para ti.</strong></p>
+        <!-- Texto personalizado -->
+        <p><strong>Te amo, si.</strong></p>
         <p>
-          Este es un espacio para decirte todo lo que siento, para recordarte lo
-          importante que eres en mi vida.
+          E intento que cada día lo sepas, lo recuerdes y lo sientas. Hay veces
+          que soy más o menos creativo en las formas que lo hago, pero lo
+          importante es que te lo haga saber.
         </p>
         <p>
-          Cada día a tu lado es un regalo, y quiero que sepas que siempre estaré
-          aquí para ti.
+          Que sepas que <strong>Te Amo mucho</strong>, que soy muy feliz contigo
+          y que cada día contigo es especial.
         </p>
         <p>
-          Gracias por ser mi compañera, mi inspiración y mi razón para sonreír.
+          De verdad me alegra mucho tenerte a mi lado y saber que siempre estás
+          aquí.
         </p>
-        <br /><br />
+        <p>Gracias por todo lo que haces por mí, por amarme, y por todo.</p>
+        <p>
+          Juntos somos la relación más bonita y sana que he visto, y me encanta
+          que sea así... y Deseo que siga siendo así toda nuestra vida.
+          <strong>Te amo</strong>.
+        </p>
       </div>
 
-      <button class="surprise-button">¡Descubre más! 💙</button>
+      <button class="surprise-button">Siguiente 💙</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -170,7 +186,7 @@
             origin: { y: 0.6 },
           });
           Swal.fire({
-            title: "Por si no lo he dicho lo suficiente...",
+            title: "No se si lo digo lo suficiente pero...",
             text: "Eres lo más importante en mi vida💙.",
             icon: "success",
             confirmButtonText: "Por ultimo...",
@@ -179,8 +195,7 @@
             confirmButtonColor: "#0664d7" /* Azul más oscuro */,
             showLoaderOnConfirm: true,
             preConfirm: () => {
-              // Redirige a otra página si lo deseas
-              window.location.href = "flores.html";
+              window.location.href = "flores.html"; /* Redirige a flor.html */
             },
           });
         });
